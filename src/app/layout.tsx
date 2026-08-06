@@ -16,8 +16,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Blog Page",
-  description: "Created for tutorial",
+  title: "Ola Nordum Isachsen",
+  description: "Project portfolio",
 };
 
 export default function RootLayout({
