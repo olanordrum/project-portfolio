@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="border-b">
+    <header className="sticky top-0 z-50 w-full bg-white">
       <div className=" mx-auto flex items-center justify-between px-4 py-4 md:px-8 lg:px-12  ">
         <p className="font-display font-semibold text-lg md:text-xl lg:text-3xl ">
           OLA NORDRUM ISACHSEN
