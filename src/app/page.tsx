@@ -16,15 +16,18 @@ export default function Home() {
   const rest = posts.filter((p) => !p.featured);
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-16 flex flex-col gap-12">
+    <div
+      id="projects"
+      className="max-w-2xl mx-auto px-6 py-16 flex flex-col gap-12"
+    >
       <div className="flex flex-col gap-1">
         <h1 className="text-2xl font-semibold tracking-tight">Projects</h1>
         <p className="text-sm text-neutral-500">My previous projects </p>
       </div>
 
-      {featured.length > 0 && <PostList posts={featured} title="Featured" />}
+      {featured.length > 0 && <PostList posts={featured} title="Ongoing" />}
 
-      {rest.length > 0 && <PostList posts={rest} title="Posts" />}
+      {rest.length > 0 && <PostList posts={rest} title="All Projects" />}
 
       {posts.length === 0 && (
         <p className="text-sm text-neutral-400">No posts yet.</p>
