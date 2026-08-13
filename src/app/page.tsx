@@ -22,9 +22,9 @@ export default function Home() {
         <p className="text-sm text-neutral-500">My previous projects </p>
       </div>
 
-      {featured.length > 0 && <PostList posts={featured} title="Featured" />}
+      {featured.length > 0 && <PostList posts={featured} title="Ongoing" />}
 
-      {rest.length > 0 && <PostList posts={rest} title="Posts" />}
+      {rest.length > 0 && <PostList posts={rest} title="All Projects" />}
 
       {posts.length === 0 && (
         <p className="text-sm text-neutral-400">No posts yet.</p>
