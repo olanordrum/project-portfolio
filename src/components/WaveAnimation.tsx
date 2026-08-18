@@ -28,7 +28,7 @@ export default function WaveAnimation() {
     <img
       src={keyframes[frame]}
       alt="wave animation"
-      className="w-32 h-32 object-contain"
+      className="h-20 md:h-25 lg:h-32 w-auto object-contain"
     />
   );
 }
