@@ -1,6 +1,7 @@
 "use client";
 import { PostList } from "../components/post-list";
 import { usePosts } from "../hooks/usePosts";
+import WaveAnimation from "../components/WaveAnimation";
 
 export default function Home() {
   const { posts, loading, error } = usePosts();
@@ -10,7 +11,11 @@ export default function Home() {
       <p className="text-sm text-red-500 p-8">Failed to load posts: {error}</p>
     );
   if (loading || !posts)
-    return <p className="text-sm text-neutral-400 p-8">Loading...</p>;
+    return (
+      <div className="max-w-2xl mx-auto flex flex-1 items-center justify-center">
+        <WaveAnimation />
+      </div>
+    );
 
   const featured = posts.filter((p) => p.featured);
   const rest = posts.filter((p) => !p.featured);
