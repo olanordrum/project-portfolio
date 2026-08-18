@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "./Logo";
 
 export default function Header() {
   return (
@@ -8,7 +9,7 @@ export default function Header() {
           href="/"
           className="font-display font-semibold text-lg md:text-xl lg:text-3xl duration-300 hover:tracking-wide cursor-pointer "
         >
-          OLA NORDRUM ISACHSEN
+          <Logo />
         </Link>
         <Link
           href="/#projects"
