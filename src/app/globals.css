@@ -2,8 +2,8 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-    --background: #FFFDFA;
-    --foreground: #ff0000;
+    --background: ##f4f5ee;
+    --foreground: #3E64CE;
 }
 
 @theme inline {
@@ -15,8 +15,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #FFFDFA;
-    --foreground: #ff0000;
+    --background: ##f4f5ee;
+    --foreground: #3E64CE;
   }
 }
 
