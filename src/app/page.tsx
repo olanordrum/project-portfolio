@@ -2,6 +2,7 @@
 import { PostList } from "../components/post-list";
 import { usePosts } from "../hooks/usePosts";
 import WaveAnimation from "../components/WaveAnimation";
+import BoogieAnimation from "../components/BoogieAnimation";
 
 export default function Home() {
   const { posts, loading, error } = usePosts();
@@ -13,7 +14,7 @@ export default function Home() {
   if (loading || !posts)
     return (
       <div className="max-w-2xl mx-auto flex flex-1 items-center justify-center">
-        <WaveAnimation />
+        <BoogieAnimation />
       </div>
     );
 
@@ -32,6 +33,8 @@ export default function Home() {
 
       {featured.length > 0 && <PostList posts={featured} title="Ongoing" />}
 
+      {rest.length > 0 && <PostList posts={rest} title="All Projects" />}
+      {rest.length > 0 && <PostList posts={rest} title="All Projects" />}
       {rest.length > 0 && <PostList posts={rest} title="All Projects" />}
 
       {posts.length === 0 && (
