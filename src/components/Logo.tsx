@@ -1,3 +1,4 @@
+/*
 const letters = [
   "O",
   "L",
@@ -31,5 +32,37 @@ export default function Logo() {
         />
       ))}
     </div>
+  );
+}
+
+*/
+
+"use client";
+
+import { useState, useEffect } from "react";
+
+const logos = [
+  "../../animations/name/Name_1.png",
+  "../../animations/name/Name_2.png",
+  "../../animations/name/Name_3.png",
+];
+
+export default function Logo() {
+  const [currentLogo, setCurrentLogo] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentLogo((current) => (current + 1) % logos.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <img
+      src={logos[currentLogo]}
+      alt="Ola Nordrum Isachsen"
+      className="h-6 w-auto md:h-10 lg:h-12"
+    />
   );
 }
