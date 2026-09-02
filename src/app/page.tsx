@@ -22,24 +22,46 @@ export default function Home() {
   const rest = posts.filter((p) => !p.featured);
 
   return (
-    <div
-      id="projects"
-      className="max-w-2xl mx-auto px-6 py-16 flex flex-col gap-12"
-    >
-      <div className="flex flex-col gap-1">
-        <h1 className="text-2xl font-semibold tracking-tight">Projects</h1>
-        <p className="text-sm text-neutral-500">My previous projects </p>
-      </div>
+    <div className="w-full">
+      {/*About*/}
+      <section className="w-full min-h-[70vh] flex items-center justify-center">
+        <div className="w-full max-w-2xl px-6 py-16">
+          <h1 className="font-bold text-2xl md:text-3xl lg:text-3xl mb-2">
+            Hey there!
+          </h1>
+          <p className="lg:text-2xl">
+            As a curious creative and critical thinker, I love to explore the
+            world around me, understand how things work, and brainstorm ways to
+            improve people's lives through innovation and creative
+            problem-solving. With my varied background, I bring a unique set of
+            skill sets and perspective into my work. Take a look at work below
+            and feel free to contact me with any questions!
+          </p>
+        </div>
+      </section>
 
-      {featured.length > 0 && <PostList posts={featured} title="Ongoing" />}
+      {/*Projects*/}
+      <section
+        id="projects"
+        className="w-full max-w-2xl mx-auto px-6 py-16 flex flex-col gap-12"
+      >
+        <div className="flex flex-col gap-1">
+          <h1 className="text-2xl font-semibold tracking-tight">
+            Featured work
+          </h1>
+          <p className="text-sm text-neutral-500">Current and previous work</p>
+        </div>
 
-      {rest.length > 0 && <PostList posts={rest} title="All Projects" />}
-      {rest.length > 0 && <PostList posts={rest} title="All Projects" />}
-      {rest.length > 0 && <PostList posts={rest} title="All Projects" />}
+        {featured.length > 0 && <PostList posts={featured} title="Ongoing" />}
 
-      {posts.length === 0 && (
-        <p className="text-sm text-neutral-400">No posts yet.</p>
-      )}
+        {rest.length > 0 && <PostList posts={rest} title="All Projects" />}
+        {rest.length > 0 && <PostList posts={rest} title="All Projects" />}
+        {rest.length > 0 && <PostList posts={rest} title="All Projects" />}
+
+        {posts.length === 0 && (
+          <p className="text-sm text-neutral-400">No posts yet.</p>
+        )}
+      </section>
     </div>
   );
 }
