@@ -24,18 +24,18 @@ export default function Home() {
   return (
     <div className="w-full">
       {/*About*/}
-      <section className="w-full min-h-[70vh] flex items-center justify-center">
-        <div className="w-full max-w-2xl px-6 py-16">
+      <section className="w-full bg-white min-h-[100vh] flex items-center justify-center">
+        <div className="w-full md:max-w-2xl lg:max-w-3xl px-10 py-16">
           <h1 className="font-bold text-2xl md:text-3xl lg:text-3xl mb-2">
             Hey there!
           </h1>
           <p className="lg:text-2xl">
-            As a curious creative and critical thinker, I love to explore the
-            world around me, understand how things work, and brainstorm ways to
-            improve people's lives through innovation and creative
-            problem-solving. With my varied background, I bring a unique set of
-            skill sets and perspective into my work. Take a look at work below
-            and feel free to contact me with any questions!
+            My name is Ola, as a curious creative and critical thinker, I love
+            to explore the world around me, understand how things work, and
+            brainstorm ways to improve people's lives through innovation and
+            creative problem-solving. With my varied background, I bring a
+            unique set of skill sets and perspective into my work. Take a look
+            at work below and feel free to contact me with any questions!
           </p>
         </div>
       </section>
@@ -43,7 +43,7 @@ export default function Home() {
       {/*Projects*/}
       <section
         id="projects"
-        className="w-full max-w-2xl mx-auto px-6 py-16 flex flex-col gap-12"
+        className="w-full min-h-[100vh] md:max-w-2xl lg:max-w-2xl mx-auto px-10 py-30 flex flex-col gap-12"
       >
         <div className="flex flex-col gap-1">
           <h1 className="text-2xl font-semibold tracking-tight">
@@ -54,8 +54,6 @@ export default function Home() {
 
         {featured.length > 0 && <PostList posts={featured} title="Ongoing" />}
 
-        {rest.length > 0 && <PostList posts={rest} title="All Projects" />}
-        {rest.length > 0 && <PostList posts={rest} title="All Projects" />}
         {rest.length > 0 && <PostList posts={rest} title="All Projects" />}
 
         {posts.length === 0 && (
