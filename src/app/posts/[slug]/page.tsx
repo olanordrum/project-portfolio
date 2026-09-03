@@ -42,10 +42,7 @@ export default function PostPage() {
   if (!post) return null;
 
   return (
-    <article className="mx-auto px-4 py-10">
-      <Breadcrumb
-        items={[{ label: "Home", href: "/" }, { label: post.title }]}
-      />
+    <article className="max-w-4xl mx-auto px-4 py-15 lg:py-30">
       <Markdown content={post.content_md} />
     </article>
   );
