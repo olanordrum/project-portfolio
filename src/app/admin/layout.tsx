@@ -29,23 +29,20 @@ export default function AdminLayout({
   if (!authorized) return null;
 
   return (
-    <div>
-      <header className="border-b border-neutral-300 py-4 px-2 sm:px-0 text-sm font-medium flex justify-between">
-        <span>Admin Page</span>
-        <button
-          onClick={async () => {
-            await supabase.auth.signOut();
-            router.push("/login");
-          }}
-          className="text-gray-500 hover:text-black hover:cursor-pointer inline-flex items-center gap-2"
-        >
-          Sign out
-          <span>
-            <LogOut />
-          </span>
-        </button>
-      </header>
-      <main className="p-6 sm:p-0 sm:py-4">{children}</main>
+    <div className="w-full py-30 px-30">
+      <button
+        onClick={async () => {
+          await supabase.auth.signOut();
+          router.push("/login");
+        }}
+        className="text-gray-500 hover:text-black hover:cursor-pointer inline-flex items-center gap-2 pb-10"
+      >
+        Sign out
+        <span>
+          <LogOut />
+        </span>
+      </button>
+      <main className="flex justify-center">{children}</main>
     </div>
   );
 }
