@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <div className="w-full">
       {/*About*/}
-      <section className="w-full bg-white min-h-[100vh] flex items-center justify-center">
+      <section className="relative w-full bg-white min-h-[100vh] flex flex-row items-center justify-center">
         <div className="w-full md:max-w-2xl lg:max-w-3xl px-10 py-16">
           <h1 className="font-bold text-2xl md:text-3xl lg:text-3xl mb-2">
             Hey there!
@@ -38,6 +38,11 @@ export default function Home() {
             at work below and feel free to contact me with any questions!
           </p>
         </div>
+        <img
+          src={"../../Smiling_Dude.png"}
+          alt="backflip animation"
+          className="absolute bottom-0 left-[80%] h-15 md:h-25 lg:h-25 w-auto object-contain"
+        />
       </section>
 
       {/*Projects*/}
