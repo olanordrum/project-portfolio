@@ -26,7 +26,7 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="w-full flex items-center justify-center">
       <div className="flex flex-col gap-4 w-full max-w-xs">
         <h1 className="text-xl font-semibold">Admin Login</h1>
         <input
