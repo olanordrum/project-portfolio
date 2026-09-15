@@ -49,10 +49,12 @@ function PostRow({ post }: { post: Post }) {
       href={`/posts/${post.slug}`}
       className="group flex items-start justify-between gap-4 py-3 border-b border-neutral-100 hover:border-neutral-300 transition-colors"
     >
-      <div className="flex flex-col gap-0.5">
-        <span className="text-sm font-medium">{post.title || post.slug}</span>
+      <div className="flex flex-col gap-1.0">
+        <span className="text-sm md:text-md lg:text-lg font-medium">
+          {post.title || post.slug}
+        </span>
         {post.summary && (
-          <span className="text-sm text-neutral-500 line-clamp-1">
+          <span className="text-sm lg:text-md text-neutral-500 line-clamp-1">
             {post.summary}
           </span>
         )}
