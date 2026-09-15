@@ -48,7 +48,7 @@ export default function Home() {
       {/*Projects*/}
       <section
         id="projects"
-        className="w-full min-h-[100vh] md:max-w-2xl lg:max-w-2xl mx-auto px-10 py-30 flex flex-col gap-12"
+        className="w-full min-h-[100vh] md:max-w-2xl lg:max-w-3xl mx-auto px-10 py-30 flex flex-col gap-12"
       >
         <div className="flex flex-col gap-1">
           <h1 className="text-2xl font-semibold tracking-tight">
