@@ -60,11 +60,23 @@ export default function BackflipAnimation({
   useEffect(() => {
     if (!isHovered) {
       setFrame(0);
+      setIsDone(false);
       return;
     }
 
+    if (isDone) return;
+
     const interval = setInterval(() => {
-      setFrame((current) => (current + 1) % keyframes.length);
+      setFrame((current) => {
+        if (current >= keyframes.length - 1) {
+          clearInterval(interval);
+          setIsDone(true);
+
+          return 0;
+        }
+
+        return current + 1;
+      });
     }, 100);
 
     return () => clearInterval(interval);
