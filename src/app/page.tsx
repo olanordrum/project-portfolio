@@ -11,7 +11,7 @@ export default function Home() {
     return (
       <p className="text-sm text-red-500 p-8">Failed to load posts: {error}</p>
     );
-  if (!loading || !posts)
+  if (loading || !posts)
     return (
       <div className="min-h-screen flex flex-1 items-center justify-center">
         <BoogieAnimation />
