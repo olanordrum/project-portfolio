@@ -13,7 +13,7 @@ export default function Home() {
     );
   if (loading || !posts)
     return (
-      <div className="max-w-2xl mx-auto flex flex-1 items-center justify-center">
+      <div className="min-h-screen flex flex-1 items-center justify-center">
         <BoogieAnimation />
       </div>
     );
