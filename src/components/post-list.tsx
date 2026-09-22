@@ -15,12 +15,18 @@ export function PostList({
   adminList = false,
   deletePost,
 }: PostList) {
+  let sortedPosts = [...posts].sort((a: Post, b: Post) => {
+    return (
+      new Date(b.project_date).getTime() - new Date(a.project_date).getTime()
+    );
+  });
+
   return (
     <section className="flex flex-col gap-3">
       <p className="text-xs uppercase tracking-widest text-neutral-400">
         {title}
       </p>
-      {posts.map((post) =>
+      {sortedPosts.map((post) =>
         adminList ? (
           <PostRowAdmin key={post.id} post={post} deletePost={deletePost!} />
         ) : (
@@ -34,7 +40,6 @@ export function PostList({
 function formatDate(dateStr?: string) {
   return dateStr
     ? new Date(dateStr).toLocaleDateString("en-GB", {
-        day: "numeric",
         month: "short",
         year: "numeric",
       })
@@ -42,7 +47,7 @@ function formatDate(dateStr?: string) {
 }
 
 function PostRow({ post }: { post: Post }) {
-  const date = formatDate(post.created_at);
+  const date = formatDate(post.project_date);
 
   return (
     <Link
@@ -74,7 +79,7 @@ type PostRowAdminProps = {
 };
 
 function PostRowAdmin({ post, deletePost }: PostRowAdminProps) {
-  const date = formatDate(post.created_at);
+  const date = formatDate(post.project_date);
 
   return (
     <div className="group flex items-start justify-between gap-4 py-3 border-b border-neutral-100 hover:border-neutral-300 transition-colors">
