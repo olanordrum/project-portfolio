@@ -7,6 +7,7 @@ export type Post = {
   created_at: string;
   updated_at: string;
   featured: boolean;
+  project_date: string;
 };
 
 export type PostField = {
