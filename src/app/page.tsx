@@ -24,7 +24,9 @@ export default function Home() {
 
   if (error)
     return (
-      <p className="text-sm text-red-500 p-8">Failed to load posts: {error}</p>
+      <p className="text-l text-red-500 min-h-screen flex flex-1 items-center justify-center ">
+        Failed to load: {error}
+      </p>
     );
   if (loading || !posts) {
     return (
