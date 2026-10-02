@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect } from "react";
 import { PostList } from "../components/post-list";
 import { usePosts } from "../hooks/usePosts";
 import WaveAnimation from "../components/WaveAnimation";
@@ -6,17 +7,36 @@ import BoogieAnimation from "../components/BoogieAnimation";
 
 export default function Home() {
   const { posts, loading, error } = usePosts();
+  const [loadingAnimation, setLoadingAnimation] = useState<
+    "wave" | "boogie" | null
+  >(null);
+
+  useEffect(() => {
+    const hasVisited = sessionStorage.getItem("hasVisitedHome");
+
+    if (hasVisited) {
+      setLoadingAnimation("boogie");
+    } else {
+      setLoadingAnimation("wave");
+      sessionStorage.setItem("hasVisitedHome", "true");
+    }
+  }, []);
 
   if (error)
     return (
-      <p className="text-sm text-red-500 p-8">Failed to load posts: {error}</p>
+      <p className="text-l text-red-500 min-h-screen flex flex-1 items-center justify-center ">
+        Failed to load: {error}
+      </p>
     );
-  if (loading || !posts)
+  if (loading || !posts) {
     return (
       <div className="min-h-screen flex flex-1 items-center justify-center">
-        <BoogieAnimation />
+        {loadingAnimation === "wave" && <WaveAnimation />}
+
+        {loadingAnimation === "boogie" && <BoogieAnimation />}
       </div>
     );
+  }
 
   const featured = posts.filter((p) => p.featured);
   const rest = posts.filter((p) => !p.featured);
