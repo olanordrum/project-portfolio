@@ -8,6 +8,10 @@ export type Post = {
   updated_at: string;
   featured: boolean;
   project_date: string;
+  accent_color: string;
+  project_type: string;
+  role: string;
+  tags: string[];
 };
 
 export type PostField = {
