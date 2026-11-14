@@ -54,18 +54,25 @@ function PostRow({ post }: { post: Post }) {
       href={`/posts/${post.slug}`}
       className="group flex items-start justify-between gap-4  pb-5 pt-4 border-b border-neutral-100 hover:border-neutral-300 transition-colors"
     >
-      <div className="flex  flex-col gap-4 min-w-0 flex-1">
-        <div className="flex flex-col gap-1">
-          <span className="text-lg lg:text-xl font-bold">
-            {post.title || post.slug}
-          </span>
-          <span className="text-sm md:text:md">{post.project_type}</span>
-          {post.summary && (
-            <span className="text-sm md:text-md text-neutral-500 line-clamp-1">
-              {post.summary}
+      <div className="flex  flex-col gap-3 min-w-0 flex-1">
+        <div className="flex flex-col ">
+          <div className="flex items-center justify-between">
+            <span className="text-lg lg:text-xl font-bold">
+              {post.title || post.slug}
             </span>
-          )}
+            {date && (
+              <span className="text-xs text-neutral-400 whitespace-nowrap pt-0.5">
+                {date}
+              </span>
+            )}
+          </div>
+          <span className="text-sm md:text:md">{post.project_type}</span>
         </div>
+        {post.summary && (
+          <span className="text-sm md:text-md text-neutral-500 line-clamp-1">
+            {post.summary}
+          </span>
+        )}
         <div className="flex flex-wrap gap-3">
           {post.tags.map((tag, index) => (
             <span
@@ -81,11 +88,6 @@ function PostRow({ post }: { post: Post }) {
           ))}
         </div>
       </div>
-      {date && (
-        <span className="text-xs text-neutral-400 whitespace-nowrap pt-0.5">
-          {date}
-        </span>
-      )}
     </Link>
   );
 }
