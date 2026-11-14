@@ -54,14 +54,14 @@ function PostRow({ post }: { post: Post }) {
       href={`/posts/${post.slug}`}
       className="group flex items-start justify-between gap-4  pb-5 pt-4 border-b border-neutral-100 hover:border-neutral-300 transition-colors"
     >
-      <div className="flex flex-col gap-4 min-w-0 flex-1">
+      <div className="flex  flex-col gap-4 min-w-0 flex-1">
         <div className="flex flex-col gap-1">
-          <span className="text-sm md:text-md lg:text-lg font-medium">
+          <span className="text-lg lg:text-xl font-bold">
             {post.title || post.slug}
           </span>
-          <span>{post.project_type}</span>
+          <span className="text-sm md:text:md">{post.project_type}</span>
           {post.summary && (
-            <span className="text-sm lg:text-md text-neutral-500 line-clamp-1">
+            <span className="text-sm md:text-md text-neutral-500 line-clamp-1">
               {post.summary}
             </span>
           )}
